@@ -72,15 +72,16 @@ while True:
         left_elbow = results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_ELBOW]
         right_elbow = results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_ELBOW]
         
+        # Coordinates of the left and right knee points (sol ve sağ diz noktalarının koordinatları)
         left_knee = results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_KNEE]
         right_knee = results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_KNEE]
-        
+        # Coordinates of the left and right ankle points (sol ve sağ ayak bileği noktalarının koordinatları)
         left_ankle = results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_ANKLE]
         right_ankle = results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_ANKLE]
-        
+        # Coordinates of the left and right toe (index finger) points (sol ve sağ ayak parmak ucu (işaret parmağı) noktalarının koordinatları)
         left_foot_index = results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_FOOT_INDEX]
         right_foot_index  = results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_FOOT_INDEX]
-        
+        # Coordinates of the left and right wrist points (sol ve sağ bilek noktalarının koordinatları) 
         left_wrist = results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_WRIST]
         right_wrist = results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_WRIST]
         
@@ -123,7 +124,7 @@ while True:
     cv2.imshow("img", img)
     
     # Break the loop when 'q' key is pressed  ('q' tuşuna basıldığında döngüyü kır)
-    if cv2.waitKey(10) & 0xFF == ord("q"):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
 # Release the video stream and close windows (Video akışını serbest bırak ve pencereleri kapat)
