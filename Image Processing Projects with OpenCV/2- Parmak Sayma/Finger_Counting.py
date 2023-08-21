@@ -32,7 +32,7 @@ while True:
     print(results.multi_hand_landmarks)
     
     lmList = []  # List of Landmarks  (Landmark'ların listesi)
-    
+    totalF = 0 
     if results.multi_hand_landmarks:
         for handlms in results.multi_hand_landmarks:
             mpDraw.draw_landmarks(img, handlms, mpHand.HAND_CONNECTIONS)
