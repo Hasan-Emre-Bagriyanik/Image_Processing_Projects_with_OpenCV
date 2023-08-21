@@ -94,7 +94,7 @@ while True:
         # Diğer egzersizler için benzer mantığı uygulayabilirsiniz
         
     cv2.imshow("img", img)
-    if cv2.waitKey(10) & 0xFF == ord("q"):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
 cap.release()
