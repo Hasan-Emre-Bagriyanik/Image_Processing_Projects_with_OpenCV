@@ -1,0 +1,35 @@
+name: Test Workflow for Finger Counting
+
+on:
+  push:
+    branches:
+      - main  # Bu, main dalına yapılan her push ile tetiklenir
+  pull_request:
+    branches:
+      - main  # PR açıldığında tetiklenir
+
+jobs:
+  test:
+    runs-on: windows-latest  # Windows ortamında çalışacak
+
+    steps:
+      # 1. Adım: Repository kodunu çekmek
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Adım: Python kurulumu
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  # Projenizde hangi Python sürümünü kullanıyorsanız yazın
+
+      # 3. Adım: Gerekli bağımlılıkları yüklemek
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Burada requirements.txt dosyanızın olduğunu varsayıyorum
+
+      # 4. Adım: Testleri çalıştırmak
+      - name: Run Tests
+        run: |
+          pytest  # Testlerinizi çalıştırmak için pytest'i kullanıyoruz
